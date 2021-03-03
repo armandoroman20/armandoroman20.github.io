@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thyme leaf.org/extras/spring-security" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Armando Codes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <!--    <link rel="stylesheet" type='text/css' th:href="@{/home.css}">-->
+    <link rel="stylesheet" type='text/css' href="/home.css">
+
+    <!--    <link rel="stylesheet" type='text/css' th:href="@{/rotating.css}">-->
+
+    <link rel="stylesheet" type='text/css' href="/rotating.css">
+
+</head>
+<body>
+<div class="d-none d-lg-block d-xl-block">
+
+    <div class="bg">
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card greeting-card">
+                    <div class="card-body">
+                        <p class="rotatingText">
+                            Hello, I'm &hellip;
+
+                            <span class="rotatingText-adjective">committed.</span>
+                            <span class="rotatingText-adjective">collaborative.</span>
+                            <span class="rotatingText-adjective">a full-stack developer.</span>
+                            <span class="rotatingText-adjective">Armando Roman.</span>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="d-flex justify-content-center mt-3 mb-3">
+            <h1>ABOUT ME</h1>
+        </div>
+    </div>
+    <div>
+        <p style="text-align: center">I am a full-stack developer that focuses on front-end development. I like to
+            create web pages that are fun, dynamic, and appealing to the user. </p>
+    </div>
+    <div class="card">
+        <form id="contact-form">
+            <input type="hidden" name="contact_number">
+            <label>Name</label>
+            <input type="text" name="user_name">
+            <label>Email</label>
+            <input type="email" name="user_email">
+            <label>Message</label>
+            <textarea name="message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+<!--mobile section-->
+<div class="d-block d-sm-block d-md-block d-lg-none">
+    <section>
+        <div class="bg">
+            <div class="container">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="mobile-card mb-card">
+                        <div class="card-body mobile-card-body">
+                            <p class="rotatingText-mobile mobile-italic-text">
+                                Hello, I'm &hellip;
+
+                                <span class="rotatingText-adjective-mobile">committed.</span>
+                                <span class="rotatingText-adjective-mobile">collaborative.</span>
+                                <span class="rotatingText-adjective-mobile">a full-stack developer.</span>
+                                <span class="rotatingText-adjective-mobile">Armando Roman.</span>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header>
+        <nav th:insert="partials/home-mnb :: home-mnb"/>
+    </header>
+    <div class="mobile-about">
+        <div class="d-flex justify-content-center mt-3 mb-3">
+            <h1>ABOUT</h1>
+        </div>
+        <p class=" mt-3 mb-3">I am a full-stack developer that focuses on front-end development. I like to create web
+            pages that are fun, dynamic, and appealing to the user. </p>
+        <div class="card mobile-contact-card">
+            <form id="contact-form">
+                <input type="hidden" name="contact_number">
+                <label>Name</label>
+                <input type="text" name="user_name">
+                <label>Email</label>
+                <input type="email" name="user_email">
+                <label>Message</label>
+                <textarea name="message"></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init("user_ImyhfBVdxzPC6Yma49apF");
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('service_nqgbuhu', 'contact_form', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                    alert('Sent!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
