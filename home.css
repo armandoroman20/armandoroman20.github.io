@@ -4,7 +4,7 @@ body, html {
 }
 
 .bg {
-    background-image: url(/images/dev-setup.jpg);
+    background-image: url(images/background.jpg);
 
     /* Full height */
     height: 100vh;
