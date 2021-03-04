@@ -121,7 +121,7 @@
         <div class="form-group mobile-contact-card">
             <div class="card">
                 <div class="mobile-contact-body card-body">
-                    <form>
+                    <form id="mobile-contact-form">
                         <!-- Header -->
                         <div class="form-header blue accent-1">
                             <h3 class="mt-2"><a name="contact">Get in touch</a></h3>
@@ -170,7 +170,7 @@
 </script>
 <script type="text/javascript">
     window.onload = function () {
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
+        document.getElementById('contact-form' || 'mobile-contact-form').addEventListener('submit', function (event) {
             event.preventDefault();
             // generate a five digit number for the contact_number variable
             this.contact_number.value = Math.random() * 100000 | 0;
