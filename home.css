@@ -43,9 +43,15 @@ body, html {
     /*margin-top: 10vh;*/
 }
 
-.mobile-card-body {
-    height: 100vh;
-    margin-top: 10vh;
+/*.mobile-card-body {*/
+/*    height: 100vh;*/
+/*    margin-top: 10vh;*/
+/*}*/
+
+.mobile-contact-card{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 .mobile-contact-body{
@@ -67,8 +73,4 @@ body, html {
     background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
-.mobile-contact-card{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
+
