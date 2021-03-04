@@ -168,7 +168,7 @@
 </script>
 <script type="text/javascript">
     window.onload = function () {
-        document.querySelectorAll('.contact-form')[0||1].addEventListener('submit', function (event) {
+        document.querySelectorAll('.contact-form')[0&&1].addEventListener('submit', function (event) {
             console.log("clicked");
             event.preventDefault();
             // generate a five digit number for the contact_number variable
