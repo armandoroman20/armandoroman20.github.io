@@ -1,10 +1,11 @@
 body, html {
     height: 100%;
     margin: 0;
+    background-color: #EEFFDB;
 }
 
 .bg {
-    background-image: url(images/background.jpg);
+    background-image: url(images/background2.jpg);
 
     /* Full height */
     height: 100vh;
@@ -45,6 +46,11 @@ body, html {
 .mobile-card-body {
     height: 100vh;
     margin-top: 10vh;
+}
+
+.mobile-contact-body{
+    height: auto;
+    margin-top: 2vh;
 }
 
 .mobile-about {
